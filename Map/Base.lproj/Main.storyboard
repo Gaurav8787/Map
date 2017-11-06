@@ -23,13 +23,39 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5bu-fA-hW3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgV-4d-I8T">
+                                <rect key="frame" x="34" y="530" width="38" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="aU0-nX-hES"/>
+                                    <constraint firstAttribute="height" constant="30" id="zaM-Xv-GTg"/>
+                                </constraints>
+                                <state key="normal" title="zoom"/>
+                                <connections>
+                                    <action selector="zoompressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gtW-kS-g46"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9e-Bw-Vye">
+                                <rect key="frame" x="119" y="530" width="31" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="4LY-y7-H63"/>
+                                    <constraint firstAttribute="height" constant="30" id="wbB-ps-pdc"/>
+                                </constraints>
+                                <state key="normal" title="type"/>
+                                <connections>
+                                    <action selector="typepessed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qiu-bB-Laf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="O7Q-VU-IFo" firstAttribute="top" secondItem="5bu-fA-hW3" secondAttribute="bottom" id="9g1-H6-lv0"/>
                             <constraint firstItem="5bu-fA-hW3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BqQ-2D-YWN"/>
                             <constraint firstItem="5bu-fA-hW3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NTA-MU-EyZ"/>
+                            <constraint firstItem="O7Q-VU-IFo" firstAttribute="top" secondItem="t9e-Bw-Vye" secondAttribute="bottom" constant="8" id="PLK-Cl-WWV"/>
                             <constraint firstAttribute="trailing" secondItem="5bu-fA-hW3" secondAttribute="trailing" id="T1f-uP-uLR"/>
+                            <constraint firstItem="O7Q-VU-IFo" firstAttribute="top" secondItem="zgV-4d-I8T" secondAttribute="bottom" constant="8" id="Vnb-8T-I82"/>
+                            <constraint firstItem="t9e-Bw-Vye" firstAttribute="leading" secondItem="zgV-4d-I8T" secondAttribute="trailing" constant="47" id="YQR-gL-mHv"/>
+                            <constraint firstItem="zgV-4d-I8T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="34" id="qYp-AL-iR1"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>

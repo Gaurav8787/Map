@@ -59,6 +59,11 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
             let coregion = MKCoordinateRegionMakeWithDistance((location?.coordinate)!, 1000, 1000)
             myMapView.setRegion(coregion, animated: true)
             
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = (location?.coordinate)!
+            annotation.title = "place"
+            self.myMapView.addAnnotation(annotation)
+            
             locmanager.stopUpdatingLocation()
             _didComplete(location: location, error: error)
             locmanager.delegate = nil
@@ -72,7 +77,31 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-
+    
+    @IBAction func zoompressed(_ sender: Any) {
+        
+        let userLocation = myMapView.userLocation
+        
+        if userLocation != nil {
+            let coregion = MKCoordinateRegionMakeWithDistance((userLocation.coordinate), 900, 900)
+            
+            myMapView.setRegion(coregion, animated: true)
+        }
+        
+        
+        
+    }
+    
+    @IBAction func typepessed(_ sender: Any) {
+        
+        if myMapView.mapType == MKMapType.standard {
+            myMapView.mapType = MKMapType.satellite
+        } else {
+            myMapView.mapType = MKMapType.standard
+        }
+        
+    }
+    
 }
 
 extension ViewController: MKMapViewDelegate {
